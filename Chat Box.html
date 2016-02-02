@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://localhost:5000/# -->
+<html lang="en" hola_ext_inject="disabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href=/static/bootstrap/bootstrap.min.css rel="stylesheet">  -->
+    <link href="./Chat Box_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./Chat Box_files/style.css" type="text/css">
+    <link rel="stylesheet" href="./Chat Box_files/animate.css">
+    <link href="./Chat Box_files/css" rel="stylesheet" type="text/css">
+    <link href="./Chat Box_files/css(1)" rel="stylesheet" type="text/css">
+    
+    <title>Chat Box</title>
+<style type="text/css"></style></head>
+
+<body>
+
+    <div class="container">
+        <header class="section chatbox-header">
+            <div class="tag-line"><span>Share Your Thoughts, The Faster Way</span></div>
+            <a class="link link--code" href="http://localhost:5000/#"><span>Chat&nbsp;</span><span>Box</span></a>
+            <!-- <div class="title"><br>Chat Box</div> -->
+            <div class="button"><a href="http://localhost:5000/#data" class="btn btn-circle"><i class="fa fa-angle-double-down animated"></i></a>
+            <a href="https://github.com/thinker3197/" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#00BCD4; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a></div>
+        </header>
+    </div>
+
+
+    <section id="form-data" class="container content-section text-center">
+        <div class="input_form" id="data">
+            <form method="post" action="http://localhost:5000/#" id="page_form">
+                <label>TEXT</label>
+                <input type="text" id="name" name="name">
+                <label>room</label>
+                <input type="text" id="room" name="room">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+
+
+    <script src="./Chat Box_files/jquery.min.js"></script>
+    <script src="./Chat Box_files/style.js"></script>
+    <script type="text/javascript" src="./Chat Box_files/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+        $(document).ready(function() {
+            var socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
+            socket.on('msg', function(msg) {
+                var x = parseInt($('#count').html(), 10);
+                if (msg.count == '0')
+                    (
+                        $('#count').html(x + 1)
+                    )
+            });
+        });
+
+    </script>
+
+
+
+</body></html>

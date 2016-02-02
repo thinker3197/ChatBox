@@ -1,0 +1,53 @@
+
+	span
+		&:first-child
+			color $blue
+		&:nth-child(2)
+			color $red
+		&:nth-child(3)
+			color $yellow
+		&:nth-child(4)
+			color $blue
+		&:nth-child(5)
+			color $green
+		&:nth-child(6)
+			color $red
+			-ms-transform: rotate(-20deg);
+			-webkit-transform: rotatee(-20deg); 
+			transform: rotate(-20deg);
+			display inline-block
+
+.container
+	display block
+	width 122px
+	margin 100px auto
+
+div
+	height 20px
+	width 20px
+	position absolute
+	border-radius 50%
+	background black
+	display inline-block
+	&:first-child
+		animation: move 1s ease-in-out infinite alternate;
+		background $blue
+		margin-left 0
+	&:nth-child(2)
+		animation: move 1s ease-in-out -.25s infinite alternate;
+		margin-left 35px
+		background $red
+	&:nth-child(3)
+		animation: move 1s ease-in-out -.5s infinite alternate;
+		margin-left 70px
+		background $yellow
+	&:nth-child(4)
+		animation: move 1s ease-in-out -.75s infinite alternate;
+		margin-left 105px
+		background $green
+
+@keyframes move
+	0%
+			transform translateY(-10px)
+	100%
+			transform translateY(5px)

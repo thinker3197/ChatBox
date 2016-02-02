@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>chat-hub</title>
+</head>
+
+<body>
+    <h1>ENTER SOME TEXT.</h1>
+    <h1>Welcome {{name}}</h1>
+    <p id='join'></p>
+    <h1>{{room}}</h1>
+    <form method="post" action="#" id="dispform">
+        <label>TEXT</label>
+        <input type="text" id="disp"></input>
+        <input type="submit" value="Submit"></input>
+    </form>
+    <div id="msg-list"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        var url = "http://" + document.domain + ":" + location.port;
+        var socket = io.connect(url + "/chat");
+
+        $("#dispform").submit(function(event) {
+            console.log($('#disp').val());
+            socket.emit('disp', {
+                'disp': $("#disp").val()
+            });
+            $('#disp').val('');
+            return false;
+        });
+        socket.on('disp', function(msg) {
+            $("#msg-list").prepend('<h3>' + msg.disp + '<h3>');
+        });
+
+        socket.on('connect', function() {
+            socket.emit('joined', {});
+        });
+        socket.on('status', function(data) {
+            $('#join').prepend('<p>' + data.msg + '</p>');
+        });
+    });
+    </script>
+</body>
+
+</html>
