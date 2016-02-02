@@ -120,9 +120,9 @@ body
 
 .btn-circle 
 {
-    width: 35px;
-    height: 35px;
-    padding: 5px 20px;
+    width: 70px;
+    height: 70px;
+    padding: 0px 0px;
     border: 2px solid #fff;
     border-radius: 100%!important;
     font-size: 50px;
@@ -450,9 +450,13 @@ textarea {
 
 .footer
 {
+    position: absolute;
     bottom: 0;
+    padding: 15px;
     background: black;
+    margin-left: -10px; 
     width: 100%;
+    height: 50px;
     opacity: .8;
 }
 
