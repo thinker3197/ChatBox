@@ -453,7 +453,7 @@ textarea {
     position: absolute;
     bottom: 0;
     background: black;
-    width: 200%;
+    width: 100%;
     opacity: .8;
 }
 
