@@ -20,16 +20,16 @@ body
     color: #fff;
     position: relative;
     padding: 0em 0em 0em;
-    margin-top: -8px;
+   /* margin-top: -8px;
     margin-right: -8px;
-    margin-left: -8px;
+    margin-left: -8px;*/
     height: 100vh;
     background: url("wall.png");
 }
 
 .tag-line
 {
-    padding-top: 240px;
+    padding-top: 150px;
     color: #80DEEA;
     font-size: 45px;
     font-weight: 300;
@@ -122,6 +122,7 @@ body
 {
     width: 70px;
     height: 70px;
+    bottom: -40px;
     padding: 0px 0px;
     border: 2px solid #fff;
     border-radius: 100%!important;
