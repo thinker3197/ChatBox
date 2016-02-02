@@ -1,5 +1,5 @@
 /*
-	color: #22A7F0;
+    color: #22A7F0;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 */
 body
@@ -105,15 +105,15 @@ body
 
 /*.heading_name
 {
-	font-size: 200px;	
+    font-size: 200px;   
 }
 /*
 .title:hover
 {
-	opacity: .7;
-	color: #22A7F0;
-	background-color: #222;
-	-webkit-transition: all .35s;
+    opacity: .7;
+    color: #22A7F0;
+    background-color: #222;
+    -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s ease;
 }*/
