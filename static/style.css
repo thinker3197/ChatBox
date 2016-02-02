@@ -29,7 +29,7 @@ body
 
 .tag-line
 {
-    padding-top: 150px;
+    padding-top: 100px;
     color: #80DEEA;
     font-size: 45px;
     font-weight: 300;
@@ -122,8 +122,8 @@ body
 {
     width: 70px;
     height: 70px;
-    bottom: -40px;
-    padding: 0px 0px;
+    position: relative;
+        padding: 0px 0px;
     border: 2px solid #fff;
     border-radius: 100%!important;
     font-size: 50px;
